@@ -94,4 +94,11 @@ public class GameKitObject: MonoBehaviour
         }
         Tween.Rotation(transform, transform.rotation * Quaternion.Euler(0, 0, -5*_rotateSpeed), 0.2f);
     }
+
+    public void LocalRotateY(float _rotateSpeed = 2f) {
+        if(rotateTween.isAlive){
+            rotateTween.Stop();
+        }
+        Tween.LocalRotation(transform, transform.localRotation * Quaternion.Euler(0, 0, -5*_rotateSpeed), 0.2f);
+    }
 }
